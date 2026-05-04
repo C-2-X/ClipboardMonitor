@@ -2,8 +2,6 @@
 
 一款 Android 平台的剪切板监测应用，能够实时监控系统剪切板变化，自动将内容上报到指定服务器，并提供完整的历史记录管理功能。
 
-[English](README_en.md) | 简体中文
-
 ---
 
 ## ✨ 功能特性
@@ -32,8 +30,6 @@
 
 ## 📱 截图预览
 
-> （请在此处添加应用截图）
-
 | 主界面 | 历史记录 | 悬浮窗 |
 |:------:|:-------:|:------:|
 | ![主界面]() | ![历史记录]() | ![悬浮窗]() |
@@ -57,7 +53,7 @@
 ## 📂 项目结构
 
 ```
-api_App/
+ClipboardMonitor/
 ├── app/
 │   ├── src/main/
 │   │   ├── java/com/example/myapplication01/
@@ -81,7 +77,8 @@ api_App/
 │   │   └── AndroidManifest.xml
 │   └── build.gradle
 ├── build.gradle
-└── settings.gradle
+├── settings.gradle
+└── README.md
 ```
 
 ---
@@ -99,8 +96,8 @@ api_App/
 
 1. **克隆项目**
    ```bash
-   git clone https://github.com/your-username/clipboard-monitor.git
-   cd clipboard-monitor
+   git clone https://github.com/C-2-X/ClipboardMonitor.git
+   cd ClipboardMonitor
    ```
 
 2. **用 Android Studio 打开**
@@ -174,11 +171,23 @@ APK 文件输出位置：`app/build/outputs/apk/debug/app-debug.apk`
 }
 ```
 
+### 字段说明
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `id` | String | 记录唯一标识 (UUID) |
+| `deviceId` | String | 设备 Android ID |
+| `timestamp` | long | 记录时间戳 (毫秒) |
+| `clipContent` | String | 剪切板内容 |
+| `clipType` | String | 内容类型 (text/file-uri/intent) |
+| `status` | String | 状态 (PENDING/SENT/FAILED) |
+| `retryCount` | int | 重试次数 |
+
 ### 请求方式
 
 | 方式 | 说明 |
 |------|------|
-| **POST** | JSON 数据放在请求体中发送 |
+| **POST** | JSON 数据放在请求体中发送，Content-Type: application/json |
 | **GET** | JSON 数据经过 URL 编码后作为 `data` 参数发送 |
 
 ---
@@ -212,15 +221,18 @@ APK 文件输出位置：`app/build/outputs/apk/debug/app-debug.apk`
 ## 🔧 常见问题
 
 ### Q: 为什么无法读取某些应用的内容？
+
 A: 部分应用（如银行类、密码管理器）有额外的剪切板保护，应用无法读取其内容。
 
 ### Q: 为什么监测不生效？
+
 A: 请检查：
 1. 是否已开启无障碍权限
 2. 是否已开启「剪切板监测」开关
 3. 是否被系统省电策略限制
 
 ### Q: 如何彻底关闭应用？
+
 A: 需要先关闭「剪切板监测」开关，然后卸载应用。
 
 ---
@@ -241,11 +253,11 @@ A: 需要先关闭「剪切板监测」开关，然后卸载应用。
 
 ## 📬 联系作者
 
-如有问题或建议，请提交 [Issue](https://github.com/your-username/clipboard-monitor/issues)。
+如有问题或建议，请提交 [Issue](https://github.com/C-2-X/ClipboardMonitor/issues)。
 
 ---
 
 <p align="center">
-  <a href="https://github.com/your-username/clipboard-monitor">GitHub</a> ·
-  <a href="https://github.com/your-username/clipboard-monitor/releases">Releases</a>
+  <a href="https://github.com/C-2-X/ClipboardMonitor">GitHub</a> ·
+  <a href="https://github.com/C-2-X/ClipboardMonitor/releases">Releases</a>
 </p>
