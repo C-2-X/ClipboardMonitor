@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@android:drawable/ic_menu_search"
+        android:id="@+id/action_toggle_filter"
+        android:title="筛选"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:icon="@android:drawable/ic_menu_share"
+        android:id="@+id/action_export"
+        android:title="导出"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/action_export_json"
+                android:title="导出为JSON"/>
+            <item
+                android:id="@+id/action_export_csv"
+                android:title="导出为CSV"/>
+        </menu>
+    </item>
+</menu>

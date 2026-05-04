@@ -1,0 +1,3 @@
+rootProject.name = '剪切板监测'
+
+include 'app'
